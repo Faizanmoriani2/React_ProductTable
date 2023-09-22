@@ -1,6 +1,10 @@
 import product from "./data"
 
-export default function ProductTable() {
+export default function ProductTable({filterText, inStockOnly}) {
+
+    console.log("Production Tabel filter Text: " + filterText)
+    console.log("Production Table inStock Value: " + inStockOnly)
+
     return (
         <div className="product-table">
             <thead>
@@ -17,7 +21,7 @@ export default function ProductTable() {
 
 export function ProductCategoryRow() {
 
-    let fruits = [{ }]
+    let fruits = [{}]
     let vegetables = [{}] 
     
     const items = product.map((item) => {
@@ -54,6 +58,7 @@ export function ProductCategoryRow() {
                     </thead>
                 )
             })}
+
             <h3>Vegetables</h3>
             {vegetables.map((vegetable) => {
                 return (
